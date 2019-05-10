@@ -39,19 +39,19 @@ const dinosaurs3 = {
 };
 
 // How much did tyrannosaurus weigh?
-// console.log(dinosaurs1.weight);
+console.log(dinosaurs1.weight);
 
 // // What was the diet of a velociraptor?
-// console.log(dinosaurs2.diet);
+console.log(dinosaurs2.diet);
 
 // // How long was a stegosaurus?
-// console.log(dinosaurs2.length);
+console.log(dinosaurs2.length);
 
 // // What time period did tyrannosaurus live in?
-// console.log(dinosaurs1.period);
+console.log(dinosaurs1.period);
 
 // // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-// console.log(dinosaurs1.roar());
+console.log(dinosaurs1.roar());
 
 // ==== Arrays ====
 
