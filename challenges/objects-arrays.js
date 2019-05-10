@@ -121,7 +121,7 @@ const uni = universities.filter(el => el.includes('Uni'));
 
 // Given this zoo data from around the United States, follow the instructions below.  Use the specific array methods in the requests below to solve the problems.
 
-const zooAnimals = [
+zooAnimals = [
 	{ animal_name: 'Jackal, asiatic', population: 5, scientific_name: 'Canis aureus', state: 'Kentucky' },
 	{ animal_name: 'Screamer, southern', population: 1, scientific_name: 'Chauna torquata', state: 'Alabama' },
 	{ animal_name: 'White spoonbill', population: 8, scientific_name: 'Platalea leucordia', state: 'Georgia' },
@@ -146,13 +146,13 @@ Return an array with only the animal and scientific names in it.
 The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const animalNames = zooAnimals.forEach((el, index) => {
+
+const animalNames = [];
+zooAnimals.forEach(el => {
 	//console.log(zooAnimals[index].animal_name);
-	return (zooAnimals[index] = [
-		`Name: ${zooAnimals[index].animal_name.value}, Scientific: ${zooAnimals[index].scientific_name.value}.`
-	]);
+	animalNames.push(`Name: ${el.animal_name}, Scientific: ${el.scientific_name}.`);
 });
-console.log(animalNames);
+//console.log(animalNames);
 
 /* Request 2: .map()    
 
@@ -161,7 +161,7 @@ Create a new array named lowerCase and map over each name to convert them all to
 
 */
 
-const lowerCase = zooAnimals.map(el => (el = el.toLowerCase));
+const lowerCase = zooAnimals.map(el => el.animal_name.toLowerCase());
 //console.log(lowerCase);
 
 /* Request 3: .filter() 
@@ -169,16 +169,16 @@ const lowerCase = zooAnimals.map(el => (el = el.toLowerCase));
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = zooAnimals.filter(el => el.population > 5);
-//console.log(largerPopulation);
+const largerPopulation = zooAnimals.filter(el => el.population < 5);
+console.log(largerPopulation);
 
 /* Request 4: .reduce() 
 
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = zooAnimals.reduce((total, num) => total + num);
-//console.log(populationTotal);
+const populationTotal = zooAnimals.reduce((total, animal) => total + animal.population, 0);
+console.log(populationTotal);
 
 /* 
 
