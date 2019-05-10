@@ -39,19 +39,19 @@ const dinosaurs3 = {
 };
 
 // How much did tyrannosaurus weigh?
-console.log(dinosaurs1.weight);
+// console.log(dinosaurs1.weight);
 
-// What was the diet of a velociraptor?
-console.log(dinosaurs2.diet);
+// // What was the diet of a velociraptor?
+// console.log(dinosaurs2.diet);
 
-// How long was a stegosaurus?
-console.log(dinosaurs2.length);
+// // How long was a stegosaurus?
+// console.log(dinosaurs2.length);
 
-// What time period did tyrannosaurus live in?
-console.log(dinosaurs1.period);
+// // What time period did tyrannosaurus live in?
+// console.log(dinosaurs1.period);
 
-// Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log(dinosaurs1.roar());
+// // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
+// console.log(dinosaurs1.roar());
 
 // ==== Arrays ====
 
@@ -98,8 +98,8 @@ const graduates = [
 /* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
-console.log(universities);
+const universities = graduates.map(el => el.university).sort();
+//console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -107,12 +107,15 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */
-const contactInfo = [];
-console.log(contactInfo);
+//const contactInfo = graduates.map(({ first_name, email }) => ({ first_name, email }));
+const contactInfo = graduates.map(el => {
+	return el.first_name + ' ' + el.email;
+});
+//console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = [];
-console.log(uni);
+const uni = universities.filter(el => el.includes('Uni'));
+//console.log(uni);
 
 // ==== ADVANCED Array Methods ====
 
